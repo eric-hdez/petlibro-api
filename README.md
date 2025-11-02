@@ -12,6 +12,6 @@ This library is the beginning of my project to create a live camera feed/interac
 
 # Steps
 
-[x] Create a PetLibro API session manager for http calls
-[ ] Create a PetLibro API client that performs all API operations I need
+- [x] Create a PetLibro API session manager for http calls
+- [ ] Create a PetLibro API client that performs all API operations I need
 
