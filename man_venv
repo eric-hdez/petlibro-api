@@ -1,0 +1,36 @@
+#!/bin/bash
+# This script activates a Python virtual environment located in the 'venv' directory.
+function start_venv() {
+    if [ -d "venv" ]; then
+        source venv/bin/activate
+        echo "Virtual environment activated."
+    else
+        echo "Virtual environment not found. Creating one..."
+        python3.13 -m venv venv
+        source venv/bin/activate
+        echo "Virtual environment created and activated."
+    fi
+}
+
+function stop_venv() {
+    deactivate
+    echo "Virtual environment deactivated."
+}
+
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 [start|stop]"
+    exit 1
+fi
+
+case $1 in
+    start)
+        start_venv
+        ;;
+    stop)
+        stop_venv
+        ;;
+    *)
+        echo "Invalid option. Use 'start' or 'stop'."
+        exit 1
+        ;;
+esac
